@@ -5,7 +5,7 @@ const LoginPage =() => {
 
 const adminUser = {
     user: "Admin",
-    password: 12345
+    password: 123456
 }
 
 const [user, setUser] = useState({ user:""});
