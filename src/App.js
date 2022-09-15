@@ -1,18 +1,20 @@
 import React from 'react';
 import Layout from './Layout/Layout';
 
-
+import {
+  HashRouter as Router,
+  Route,
+  Link,
+  Switch
+} from 'react-router-dom';
 
 
 
 function App() {
   return (
-    <div>
-        
-        <Layout  />
-        
-    </div>
-    
+    <Router>
+        <Layout />
+    </Router>
   );
 }
 

@@ -12,21 +12,14 @@ function Layout() {
     
    return (
       <>
-      <div className='Layout'>
-            <Header  />
-            
-      </div>
-
-            
-
-          <Routes>
-            <Route path="/home"  element={<Homepage/>} />
-            <Route path="/news"  element={<News/>} />
-            <Route path="/profile"element={<Profile/>} />
-            <Route path="/login"  element={<LoginPage/>} />
-        
-          </Routes>
-
+            <div className='Layout'>
+                  <Header  />
+                  
+            </div>
+            <Route path="/home"  component={Homepage} />
+            <Route path="/news"  component={News} />
+            <Route path="/profile"component={Profile} />
+            <Route path="/login"  component={LoginPage} />
       </>
       ); 
 };
