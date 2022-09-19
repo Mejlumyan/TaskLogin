@@ -11,6 +11,8 @@ const adminUser = {
 const [user, setUser] = useState({ user:""});
 const [error, setError] = useState("");
 
+
+
 const Login = details => {
   
     
@@ -28,7 +30,7 @@ const Login = details => {
 
 const Logout = () => {
     setUser({user: ""});
-    localStorage.setItem('login', false);
+     localStorage.removeItem('login');
 }
    
     return(
@@ -40,7 +42,7 @@ const Logout = () => {
                     <button onClick={Logout}>Logout</button>  
                 </div>
             ): (
-                <LoginForm  Login={Login} error={error}/>
+                <LoginForm  Login={Login} error={error} />
             )}
         </div>
     );

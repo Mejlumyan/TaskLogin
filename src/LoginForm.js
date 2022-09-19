@@ -27,7 +27,7 @@ function LoginForm({Login, error}) {
                 </div>
 
                 <div>
-                    <input type="submit" value= "LOGIN"/>
+                    <input type="submit" value= "Login"/>
                 </div>
             </div>
         </form>

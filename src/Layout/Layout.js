@@ -14,7 +14,6 @@ function Layout() {
       <>
             <div className='Layout'>
                   <Header  />
-                  
             </div>
             <Route path="/home"  component={Homepage} />
             <Route path="/news"  component={News} />

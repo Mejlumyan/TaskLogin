@@ -14,7 +14,7 @@ function Header(){
     <div><Link to="/home">Home</Link></div>
     <div><Link to="/news">News</Link></div>
     <div><Link to="/profile">Profile</Link></div>
-    <div><Link to="/login">Login</Link></div>
+    {/* <div><Link to="/login">Login</Link></div> */}
     </div>
     
     }
