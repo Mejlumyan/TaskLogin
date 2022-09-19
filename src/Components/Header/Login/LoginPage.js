@@ -31,7 +31,7 @@ const Login = details => {
     }
     
 }       
- const isLoggedIn = false; 
+
 const Logout = () => {
     setUser({user: ""});
      localStorage.removeItem('login');
