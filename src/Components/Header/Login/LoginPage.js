@@ -44,7 +44,7 @@ const Logout = () => {
                     <Redirect to="/profile"></Redirect>
                 </div>
             ): (
-                <LoginForm  Login={Login} error={error} />
+                    <LoginForm  Login={Login} error={error} />
             )}
         </div>
     );

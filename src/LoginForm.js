@@ -8,7 +8,7 @@ function LoginForm({Login, error}) {
         e.preventDefault();
 
         Login(details);
-        <Redirect to = "/profile"></Redirect>
+        
     }
 
     
