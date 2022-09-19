@@ -1,4 +1,5 @@
 import React, {useState} from 'react'
+import { Redirect } from 'react-router-dom';
 
 function LoginForm({Login, error}) {
     const [details, setDetails] = useState({user: "", password: ""});
@@ -7,6 +8,7 @@ function LoginForm({Login, error}) {
         e.preventDefault();
 
         Login(details);
+        <Redirect to = "/profile"></Redirect>
     }
 
     
