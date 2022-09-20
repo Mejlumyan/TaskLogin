@@ -17,9 +17,7 @@ const Profile = () => {
     } else {
         return <Redirect to='/login'/>;
     }
-    
-
-    
+  
 };
 
 

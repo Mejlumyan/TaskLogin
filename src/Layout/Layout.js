@@ -4,8 +4,8 @@ import { BrowserRouter as Router, Route, Routes} from "react-router-dom";
 import Header from "../Components/Header/Header"
 import News from "../Components/Content/News/News";
 import Profile from "../Components/Content/Profile/Profile";
-import Homepage from "../Components/Header/Homepage/Homepage";
-import LoginPage from "../Components/Header/Login/LoginPage";
+import Homepage from "../Components/Content/Homepage/Homepage";
+import LoginPage from "../Components/Content/Login/LoginPage";
 
 function Layout() {
 

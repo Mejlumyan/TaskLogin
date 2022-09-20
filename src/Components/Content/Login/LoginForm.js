@@ -1,5 +1,4 @@
 import React, {useState} from 'react'
-import { Redirect } from 'react-router-dom';
 
 function LoginForm({Login, error}) {
     const [details, setDetails] = useState({user: "", password: ""});
@@ -19,12 +18,12 @@ function LoginForm({Login, error}) {
                 {(error !="") ? (<div>{error} </div>) : ""}
                 
                 <div> 
-                    <label htmlFor="user"> User:</label>
+                    <label htmlFor="user"> User: </label>
                     <input type="text" name="user" id="user" onChange={e => setDetails({...details, user: e.target.value})} value={details.user} />
                 </div>
 
                  <div> 
-                    <label htmlFor='password'>Password:</label>
+                    <label htmlFor='password'>Password: </label>
                     <input type="password" name='password' id="password" onChange={e => setDetails({...details, password: e.target.value})} value={details.password}/>
                 </div>
 
@@ -35,5 +34,5 @@ function LoginForm({Login, error}) {
         </form>
   )
 }
-
+// skzbum havaqvuma inputner@ u submite, heto avelacvum logikan
 export default LoginForm;

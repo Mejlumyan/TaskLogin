@@ -1,6 +1,6 @@
 import React,{useState} from "react";
 import { Redirect } from "react-router-dom";
-import LoginForm from "../../../LoginForm";
+import LoginForm from "./LoginForm";
 
 const LoginPage =() => {
 
@@ -34,17 +34,17 @@ const Login = details => {
 
 const Logout = () => {
     setUser({user: ""});
-     localStorage.removeItem('login');
+     localStorage.removeItem('login'); // jnjum em local storageic . bayc karelia grel aranc jnjelu - true kam false-i mijocov - localStorage.setItem('login', false)
 }
    
     return(
         <div >
-            {(user.user !== "") ?  (
-                <div>
-                    <Redirect to="/profile"></Redirect>
+            {(user.user !== "") ?  (                                // ete user.user datark chi u chistha grvac -> redirect Profile ej,
+                <div>           
+                    <Redirect to="/profile"></Redirect> 
                 </div>
             ): (
-                    <LoginForm  Login={Login} error={error} />
+                    <LoginForm  Login={Login} error={error} />        // hakarak depqum beruma error u login form
             )}
         </div>
     );
