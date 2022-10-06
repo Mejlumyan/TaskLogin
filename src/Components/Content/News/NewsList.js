@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 
 const NewsList = ({posts, title, handleDelete}) => {
 
