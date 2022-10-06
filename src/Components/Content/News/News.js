@@ -4,10 +4,17 @@ import NewsList from "./NewsList";
 const News = () => {
     const [posts, setPosts] = useState(null);
 
-    // const handleDelete = (id) => {
-    //     const newPosts = posts.filter(post => post.id !== id);  id DLT
-    //         setPosts(newPosts);
-    // }
+    const handleDelete = (id) => {
+        const newPosts = posts.filter(post => post.id !== id);
+            console.log(newPosts);
+            setPosts(newPosts);
+    }
+
+    const handleAdd = (id) => {
+        const newPosts = posts.filter(post => post.id !==id);
+        console.log(newPosts);
+        setPosts(newPosts);
+    }
 
     useEffect(() => {
         fetch('https://jsonplaceholder.typicode.com/posts')
@@ -18,7 +25,7 @@ const News = () => {
         <div className="news-page-div">
            
             <div>
-                { posts && <NewsList   posts={posts} title="All News" />}
+                { posts && <NewsList   posts={posts} title="All News" handleDelete={handleDelete} handleAdd={handleAdd} />}
             </div>
         </div>
         
