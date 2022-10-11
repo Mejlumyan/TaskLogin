@@ -2,13 +2,18 @@ import { useEffect, useState } from "react";
 import NewsList from "./NewsList";
 import axios from "axios";
 
+
+
 const src = "https://jsonplaceholder.typicode.com/posts"
 
 const News = () => {
     const [posts, setPosts] = useState(null);
 
-    const handleDelete = (id) => {
+
+    
+    const postDelete = (id) => {
         setPosts(posts.filter(post => post.id !== id));
+       
     }
 
    
@@ -18,13 +23,17 @@ const News = () => {
         .then(data => {
             setPosts(data.data);
         })
-    }, []);
+        
+    }, [])
+    
+    
     
     return(
         <div className="news-page-div">
            
             <div>
-                { posts && <NewsList   posts={posts} title="All News" handleDelete={handleDelete} />} 
+                
+                { posts && <NewsList   posts={posts} title="All News" handleDelete={postDelete} />} 
                 
             </div>
         </div>

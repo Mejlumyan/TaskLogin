@@ -9,7 +9,7 @@ const NewsList = ({posts, title, handleDelete}) => {
                 <h2 className="post-title">{post.title}</h2>
                 <p className=" post-body"> {post.body}</p>
                 
-                <button onClick={() => handleDelete(post.id)}> delete News</button> 
+                <button onClick={() => handleDelete(post.id)}> Delete News</button> 
                 
                 
                 </div>
