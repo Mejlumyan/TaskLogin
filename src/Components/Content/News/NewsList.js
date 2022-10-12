@@ -1,4 +1,3 @@
-
 const NewsList = ({posts, title, handleDelete}) => {
 
     return (

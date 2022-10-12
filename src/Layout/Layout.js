@@ -7,6 +7,8 @@ import Profile from "../Components/Content/Profile/Profile";
 import Homepage from "../Components/Content/Homepage/Homepage";
 import LoginPage from "../Components/Content/Login/LoginPage";
 
+
+
 function Layout() {
 
     
@@ -19,6 +21,7 @@ function Layout() {
             <Route path="/news"  component={News} />
             <Route path="/profile"component={Profile} />
             <Route path="/login"  component={LoginPage} />
+            
       </>
       ); 
 };
