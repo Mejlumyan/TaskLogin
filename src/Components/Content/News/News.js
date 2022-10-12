@@ -1,14 +1,15 @@
 import { useEffect, useState } from "react";
 import NewsList from "./NewsList";
 import axios from "axios";
-import AddPost from "./AddPost";
-
 
 
 const src = "https://jsonplaceholder.typicode.com/posts"
 
 const News = () => {
     const [posts, setPosts] = useState(null);
+    const [title, setTitle] = useState('');
+    const [body, setBody] = useState('');
+
     useEffect(() => {
         axios
         .get(src)
@@ -26,14 +27,36 @@ const News = () => {
         })
     }
 
+    const postData = (e,id) => {
+        e.preventDefault();
+        axios
+        .post("https://jsonplaceholder.typicode.com/posts",{
+            title,
+            body
+        })
+        .then(data =>{
+            setPosts(posts);
+            console.log(...posts,data.data);
+        })
+    }
     return(
         <div className="news-page-div">
-
+            
             <div>
-               <button> Add New Post</button>
-            </div>
+            <form >
+                <label> Title</label>
+                <input type = "text"  value = {title} placeholder='title' onChange={(e) => setTitle(e.target.value)}/>
+                <hr />
+                <label>Body</label>
+                <input type = "text"  value = {body} placeholder='body' onChange={(e) => setBody(e.target.value)}/>
+                <hr />
+                <button onClick={postData}>Add Post </button>
+            </form>
+            <hr></hr>
+        </div>
+            
             <div>
-                { posts && <NewsList   posts={posts} title="All News" handleDelete={postDelete} />} 
+                { posts && <NewsList   posts={posts} title="All News" handleDelete={postDelete}  />} 
             </div>
         </div>
     );
