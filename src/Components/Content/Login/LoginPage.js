@@ -14,6 +14,7 @@ const [error, setError] = useState("");
 
 
 
+
 const Login = details => {
   
     
@@ -32,9 +33,10 @@ const Login = details => {
     
 }       
 
+
 const Logout = () => {
     setUser({user: ""});
-     localStorage.removeItem('login'); // jnjum em local storageic . bayc karelia grel aranc jnjelu - true kam false-i mijocov - localStorage.setItem('login', false)
+     localStorage.removeItem('login'); // || localStorage.setItem('login', false)
 }
    
     return(
