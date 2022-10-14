@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import LoginPage from "../Content/Login/LoginPage";
 
 function Header(){
 
@@ -10,7 +11,7 @@ function Header(){
         <div><Link to="/news">News</Link></div>
         <div><Link to="/profile">Profile</Link></div>
         <div><Link to="/login">Login</Link></div>
-        
+        <div><Link to="/logout">Logout</Link></div>
         <hr></hr>
         
         
