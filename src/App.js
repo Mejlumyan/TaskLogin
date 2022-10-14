@@ -3,9 +3,8 @@ import Layout from './Layout/Layout';
 
 import {
   HashRouter as Router,
-  Route,
-  Link,
-  Switch
+  
+  
 } from 'react-router-dom';
 
 

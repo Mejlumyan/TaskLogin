@@ -19,7 +19,7 @@ const Login = details => {
     if(details.user == adminUser.user && details.password == adminUser.password) {
         
         setUser({
-            user: details.user        
+            user: details.user
         });
        
         localStorage.setItem('login', true);
@@ -36,6 +36,8 @@ const Logout = () => {
     setUser({user: ""});
      localStorage.removeItem('login'); // || localStorage.setItem('login', false)
 }
+
+   
    
     return(
         <div >
