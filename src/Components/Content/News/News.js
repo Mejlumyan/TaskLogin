@@ -40,11 +40,12 @@ const News = () => {
     //         console.log(...posts,data.data);
     //     })
     // }
+    
     return(
         <div className="news-page-div">
             
             <div> <Link to="/addPost">Add Post</Link></div>
-            
+            <hr></hr>
             <div>
                 { posts && <NewsList   posts={posts} title="All News" handleDelete={postDelete}  />} 
             </div>

@@ -1,26 +1,32 @@
 import { useState } from "react";
-import { Redirect } from "react-router-dom";
+import { Link, Redirect } from "react-router-dom";
 import axios from "axios";
 
 
-const AddPost = (props) => {
+
+
+const AddPost = () => {
 
   const [title, setTitle] = useState('');
   const [body, setBody] = useState('');
+
+  
+  
   
     
-  const postData = (e,id) => {
-    e.preventDefault();
-    axios
-    .post("https://jsonplaceholder.typicode.com/posts",{
-        title,
-        body
+   const postData = (e,id) => {
+     e.preventDefault();
+     axios
+     .post("https://jsonplaceholder.typicode.com/posts",{
+         title,
+         body
+     })
+     .then(data =>{
+      console.log(data);
+         // <Redirect to="/news"/>
     })
-    .then(data =>{
-        console.log(data);
-        // <Redirect to="/news"></Redirect>
-    })
-}
+ }
+
 
     return(
         <div>
@@ -32,7 +38,6 @@ const AddPost = (props) => {
         <input type = "text"  value = {body} placeholder='body'onChange={(e) => setBody(e.target.value)}/>
         <hr />
         <button onClick={postData}> Add Post </button>
-        
       </form>
       <hr></hr>
       </div>
