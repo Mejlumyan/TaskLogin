@@ -8,9 +8,7 @@ const src = "https://jsonplaceholder.typicode.com/posts"
 
 const News = () => {
     const [posts, setPosts] = useState(null);
-    // const [title, setTitle] = useState('');
-    // const [body, setBody] = useState('');
-
+    
     useEffect(() => {
         axios
         .get(src)
@@ -28,19 +26,8 @@ const News = () => {
         })
     }
 
-    // const postData = (e,id) => {
-    //     e.preventDefault();
-    //     axios
-    //     .post("https://jsonplaceholder.typicode.com/posts",{
-    //         title,
-    //         body
-    //     })
-    //     .then(data =>{
-    //         setPosts(posts);
-    //         console.log(...posts,data.data);
-    //     })
-    // }
     
+
     return(
         <div className="news-page-div">
             

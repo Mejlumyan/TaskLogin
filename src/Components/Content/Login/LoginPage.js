@@ -13,8 +13,6 @@ const [user, setUser] = useState({ user:""});
 const [error, setError] = useState("");
 
 
-
-
 const Login = details => {
   
     
@@ -50,7 +48,6 @@ const Logout = () => {
             )}
         </div>
     );
+ }      
 
-
-    }      
  export default LoginPage;
