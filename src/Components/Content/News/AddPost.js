@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Link, Redirect } from "react-router-dom";
 import axios from "axios";
+import { useHistory } from "react-router-dom";
 
 
 
@@ -10,10 +11,8 @@ const AddPost = () => {
   const [title, setTitle] = useState('');
   const [body, setBody] = useState('');
 
-  
-  
-  
-    
+  let history = useHistory();
+
    const postData = (e,id) => {
      e.preventDefault();
      axios
@@ -22,8 +21,9 @@ const AddPost = () => {
          body
      })
      .then(data =>{
-      console.log(data);
-         // <Redirect to="/news"/>
+        console.log(data);
+        history.push("/news");
+       
     })
  }
 
