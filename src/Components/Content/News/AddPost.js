@@ -2,7 +2,6 @@ import { useState } from "react";
 import axios from "axios";
 import { useHistory } from "react-router-dom";
 
-
 const AddPost = () => {
 
   const [title, setTitle] = useState('');
@@ -24,7 +23,6 @@ const AddPost = () => {
     })
  }
 
-
     return(
         <div>
           <form>
@@ -40,6 +38,5 @@ const AddPost = () => {
       </div>
     )
 }
-
 
 export default AddPost;

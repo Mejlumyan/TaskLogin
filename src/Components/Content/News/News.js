@@ -6,7 +6,9 @@ import { Link } from "react-router-dom";
 
 const src = "https://jsonplaceholder.typicode.com/posts"
 
-const News = () => {
+const News = (
+
+) => {
     const [posts, setPosts] = useState(null);
     
     useEffect(() => {
