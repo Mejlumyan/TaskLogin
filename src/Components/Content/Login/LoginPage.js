@@ -46,7 +46,7 @@ const Logout = () => {
                     <Redirect to="/profile"></Redirect> 
                 </div>
             ): (
-                    <LoginForm  Login={Login} error={error} />        // hakarak depqum beruma error u login form
+                    <LoginForm  Login={Login} error={error} />        // hakarak depqum beruma error kam login form
             )}
         </div>
     );
