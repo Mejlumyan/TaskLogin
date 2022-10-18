@@ -1,0 +1,19 @@
+.title-name{
+    text-align: center;
+}
+
+
+
+.news-anun{
+    text-align:end;
+}
+
+.news-title{
+    text-align-last: right;
+}
+
+
+
+.table-style, th, td {
+    border: 1px solid black;
+}  
