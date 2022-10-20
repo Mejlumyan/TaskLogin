@@ -1,5 +1,25 @@
 import './news.css';
+import 'antd/dist/antd.css';
+import { ExclamationCircleOutlined } from '@ant-design/icons';
+import { Button, Modal} from 'antd';
+
+
 const NewsList = ({posts, title, handleDelete}) => {
+    
+    const { confirm } = Modal;
+    const showConfirm = (id) => {
+        confirm({
+            title: 'Do you Want to delete these items?',
+            icon: <ExclamationCircleOutlined />,
+            onOk() {
+               
+                console.log(id);
+            },
+            onCancel() {
+                console.log('Cancel');
+    },
+  });
+};
 
     return (
         <>
@@ -18,12 +38,9 @@ const NewsList = ({posts, title, handleDelete}) => {
                             <td>{post.body} </td>
                             <td></td>
                             <td>
-                                <button 
-                                    onClick={() => handleDelete(post.id)} 
-                                    className='trash-box'
-                                >
-                                    Delete News
-                                </button>
+                                <Button onClick={() => showConfirm(post.id)}
+                                    >Delete
+                                </Button>
                             </td>
                         </tr>
                     ))} 
