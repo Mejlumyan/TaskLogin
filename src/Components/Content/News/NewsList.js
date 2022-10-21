@@ -2,6 +2,7 @@ import './news.css';
 import 'antd/dist/antd.css';
 import { ExclamationCircleOutlined } from '@ant-design/icons';
 import { Button, Modal} from 'antd';
+import {useFilter} from 'react-table';
 
 
 const NewsList = ({posts, title, handleDelete}) => {
