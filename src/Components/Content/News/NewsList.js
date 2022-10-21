@@ -9,7 +9,6 @@ import { useState } from 'react';
 const NewsList = ({posts, title, handleDelete}) => {
     
     const [value, setValue] = useState('');  
-    console.log(value);
 
     const { confirm } = Modal;
     const showConfirm = (id) => {
@@ -24,7 +23,6 @@ const NewsList = ({posts, title, handleDelete}) => {
             },
         });
     };
-
 
     return (
         <>
