@@ -5,6 +5,8 @@ import { Button, Modal} from 'antd';
 
 
 
+
+
 const NewsList = ({posts, title, handleDelete}) => {
     
     const { confirm } = Modal;
@@ -20,7 +22,7 @@ const NewsList = ({posts, title, handleDelete}) => {
             },
         });
     };
-
+    
     return (
         <>
             <h2 className="title-name">{title}</h2>
@@ -33,8 +35,11 @@ const NewsList = ({posts, title, handleDelete}) => {
                         <th className='news-title'></th>
                         <th className='news-title'>Delete</th>
                     </tr>
-                    
-                    
+                   <tr>
+                    <th>
+                        
+                    </th>
+                   </tr>
                    
                     {posts.map((post) =>( 
                         <tr className='list-id' key={post.id}>
