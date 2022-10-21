@@ -13,7 +13,7 @@ const NewsList = ({posts, title, handleDelete}) => {
             icon: <ExclamationCircleOutlined />,
             onOk() {
                
-                console.log(id);
+               handleDelete(id);
             },
             onCancel() {
                 console.log('Cancel');
