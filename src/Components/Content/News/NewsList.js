@@ -2,13 +2,15 @@ import './news.css';
 import 'antd/dist/antd.css';
 import { ExclamationCircleOutlined } from '@ant-design/icons';
 import { Button, Modal} from 'antd';
-
-
+import { useState } from 'react';
 
 
 
 const NewsList = ({posts, title, handleDelete}) => {
     
+    const [value, setValue] = useState('');  
+    console.log(value);
+
     const { confirm } = Modal;
     const showConfirm = (id) => {
         confirm({
@@ -18,11 +20,12 @@ const NewsList = ({posts, title, handleDelete}) => {
                handleDelete(id);
             },
             onCancel() {
-            
+                console.log("cancel");
             },
         });
     };
-    
+
+
     return (
         <>
             <h2 className="title-name">{title}</h2>
@@ -36,11 +39,13 @@ const NewsList = ({posts, title, handleDelete}) => {
                         <th className='news-title'>Delete</th>
                     </tr>
                    <tr>
-                    <th>
-                        
-                    </th>
+
+                    <th> <input type='number'
+                        placeholder='search by id' 
+                        onChange={e=> setValue(e.target.value)}>
+                    </input> </th>
+                       
                    </tr>
-                   
                     {posts.map((post) =>( 
                         <tr className='list-id' key={post.id}>
                             <td>{post.id}</td>
