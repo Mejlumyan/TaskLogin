@@ -3,7 +3,6 @@ import 'antd/dist/antd.css';
 import { ExclamationCircleOutlined } from '@ant-design/icons';
 import { Button, Modal } from 'antd';
 import { useState } from 'react';
-import { debounce } from '@material-ui/core';
 
 
 const NewsList = ({ posts, title, handleDelete }) => {
