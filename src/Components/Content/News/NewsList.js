@@ -20,11 +20,13 @@ const NewsList = ({ posts, title, handleDelete }) => {
             },
         });
     };
-
+    
     const [value, setValue] = useState('');
-    const filteredNews = posts.filter(post => {
-        return post.id.toString().includes(value)
-    })
+    
+    // const filteredNews = posts.filter(post => {
+    //     return post.id.toString().includes(value) 
+    //     //|| post.title.includes(value) || post.body.includes(value)
+    // })
 
 
     return (
@@ -33,7 +35,7 @@ const NewsList = ({ posts, title, handleDelete }) => {
             <table>
                 <tbody>
                     <tr>
-                        <th className='news-id'>id</th>
+                        <th className='news-id'>Title number</th>
                         <th className='news-anun'>Title</th>
                         <th className='news-title'>Body</th>
                         <th className='news-title'></th>
@@ -42,15 +44,29 @@ const NewsList = ({ posts, title, handleDelete }) => {
                     <tr>
                         <th>
                             <input
-                                type='number'
-                                placeholder='search by title number'
+                                type='text'
+                                placeholder='search by title id'
+                                onChange={(e) => setValue(e.target.value)}
+                            />
+                        </th>
+                        <th>
+                            <input
+                                type='text'
+                                placeholder='search by title'
+                                onChange={(e) => setValue(e.target.value)}
+                            />
+                        </th>
+                        <th>
+                            <input
+                                type='text'
+                                placeholder='search by  '
                                 onChange={(e) => setValue(e.target.value)}
                             />
                         </th>
                     </tr>
 
 
-                    {filteredNews.map((post) => (               // minchev filter avelacnele posts.map
+                    {posts.map((post) => (               // minchev filter avelacnele posts.map
                         <tr className='list-id' key={post.id}>
                             <td>{post.id}</td>
                             <td>{post.title}</td>
