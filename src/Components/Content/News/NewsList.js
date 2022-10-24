@@ -20,12 +20,12 @@ const NewsList = ({posts, title, handleDelete}) => {
             },
         });
     };
-        const [value, setValue] = useState('');
-// console.log(typeof value)
-         const filteredNews = posts.filter(post => {
-            
-          return post.id.toString().includes(value)
-         })
+    
+    const [value, setValue] = useState('');
+
+    const filteredNews = posts.filter(post => {
+        return post.id.toString().includes(value)
+    })
 
     return (
         <>
@@ -40,15 +40,16 @@ const NewsList = ({posts, title, handleDelete}) => {
                         <th className='news-title'>Delete</th>
                     </tr>
                    <tr>
-                    <th> <input type='number'
+                    <th> 
+                        <input 
+                            type='number'
                             placeholder='search by id' 
-                            onChange={(e) => setValue(e.target.value)}>
-                        </input> 
-                        
+                            onChange={(e) => setValue(e.target.value)} 
+                        />
                     </th>
                    </tr>
                    
-                    {filteredNews.map((post) =>(               // filteredNews
+                    {filteredNews.map((post) =>(               // minchev filter avelacnele posts.map
                         <tr className='list-id' key={post.id}>
                             <td>{post.id}</td>
                             <td>{post.title}</td>

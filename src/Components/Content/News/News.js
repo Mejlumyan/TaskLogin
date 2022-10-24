@@ -10,37 +10,37 @@ const News = (
 
 ) => {
     const [posts, setPosts] = useState(null);
-    
+
     useEffect(() => {
         axios
-        .get(src)
-        .then(data => {
-            setPosts(data.data);
-        })
-        
+            .get(src)
+            .then(data => {
+                setPosts(data.data);
+            })
+
     }, []);
 
     const postDelete = (id) => {
         axios
-        .delete(src+'/'+id)
-        .then(data => {
-            setPosts(posts.filter(post => post.id !== id));
-        })
+            .delete(src + '/' + id)
+            .then(data => {
+                setPosts(posts.filter(post => post.id !== id));
+            })
     }
 
-    
 
-    return(
+
+    return (
         <div className="news-page-div">
-            
+
             <div> <Link to="/addPost">Add Post</Link></div>
             <hr></hr>
             <div>
-                { posts && <NewsList   posts={posts} title="All News" handleDelete={postDelete}  />} 
+                {posts && <NewsList posts={posts} title="All News" handleDelete={postDelete} />}
             </div>
         </div>
     );
 };
 
 
-export  default News;
+export default News;
