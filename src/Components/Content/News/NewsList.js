@@ -44,8 +44,10 @@ const NewsList = ({posts, title, handleDelete}) => {
                             placeholder='search by id' 
                             onChange={(e) => setValue(e.target.value)}>
                         </input> 
+                        
                     </th>
                    </tr>
+                   
                     {filteredNews.map((post) =>(               // filteredNews
                         <tr className='list-id' key={post.id}>
                             <td>{post.id}</td>
