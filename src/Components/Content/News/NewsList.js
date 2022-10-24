@@ -1,31 +1,32 @@
 import './news.css';
 import 'antd/dist/antd.css';
 import { ExclamationCircleOutlined } from '@ant-design/icons';
-import { Button, Modal} from 'antd';
+import { Button, Modal } from 'antd';
 import { useState } from 'react';
+import { debounce } from '@material-ui/core';
 
 
-const NewsList = ({posts, title, handleDelete}) => {
-    
+const NewsList = ({ posts, title, handleDelete }) => {
+
     const { confirm } = Modal;
     const showConfirm = (id) => {
         confirm({
             title: 'Do you Want to delete these items?',
             icon: <ExclamationCircleOutlined />,
             onOk() {
-               handleDelete(id);
+                handleDelete(id);
             },
             onCancel() {
                 console.log("cancel");
             },
         });
     };
-    
-    const [value, setValue] = useState('');
 
+    const [value, setValue] = useState('');
     const filteredNews = posts.filter(post => {
         return post.id.toString().includes(value)
     })
+
 
     return (
         <>
@@ -33,23 +34,24 @@ const NewsList = ({posts, title, handleDelete}) => {
             <table>
                 <tbody>
                     <tr>
-                        <th className='news-anun'>id</th>
+                        <th className='news-id'>id</th>
                         <th className='news-anun'>Title</th>
                         <th className='news-title'>Body</th>
                         <th className='news-title'></th>
                         <th className='news-title'>Delete</th>
                     </tr>
-                   <tr>
-                    <th> 
-                        <input 
-                            type='number'
-                            placeholder='search by id' 
-                            onChange={(e) => setValue(e.target.value)} 
-                        />
-                    </th>
-                   </tr>
-                   
-                    {filteredNews.map((post) =>(               // minchev filter avelacnele posts.map
+                    <tr>
+                        <th>
+                            <input
+                                type='number'
+                                placeholder='search by title number'
+                                onChange={(e) => setValue(e.target.value)}
+                            />
+                        </th>
+                    </tr>
+
+
+                    {filteredNews.map((post) => (               // minchev filter avelacnele posts.map
                         <tr className='list-id' key={post.id}>
                             <td>{post.id}</td>
                             <td>{post.title}</td>
@@ -57,11 +59,11 @@ const NewsList = ({posts, title, handleDelete}) => {
                             <td></td>
                             <td>
                                 <Button onClick={() => showConfirm(post.id)}
-                                    >Delete
+                                >Delete
                                 </Button>
                             </td>
                         </tr>
-                    ))} 
+                    ))}
                 </tbody>
             </table>
         </>
