@@ -5,11 +5,8 @@ import { Button, Modal} from 'antd';
 import { useState } from 'react';
 
 
-
 const NewsList = ({posts, title, handleDelete}) => {
     
-    const [value, setValue] = useState('');  
-
     const { confirm } = Modal;
     const showConfirm = (id) => {
         confirm({
@@ -23,6 +20,12 @@ const NewsList = ({posts, title, handleDelete}) => {
             },
         });
     };
+        const [value, setValue] = useState('');
+// console.log(typeof value)
+         const filteredNews = posts.filter(post => {
+            
+          return post.id.toString().includes(value)
+         })
 
     return (
         <>
@@ -37,14 +40,13 @@ const NewsList = ({posts, title, handleDelete}) => {
                         <th className='news-title'>Delete</th>
                     </tr>
                    <tr>
-
                     <th> <input type='number'
-                        placeholder='search by id' 
-                        onChange={e=> setValue(e.target.value)}>
-                    </input> </th>
-                       
+                            placeholder='search by id' 
+                            onChange={(e) => setValue(e.target.value)}>
+                        </input> 
+                    </th>
                    </tr>
-                    {posts.map((post) =>( 
+                    {filteredNews.map((post) =>(               // filteredNews
                         <tr className='list-id' key={post.id}>
                             <td>{post.id}</td>
                             <td>{post.title}</td>
